@@ -1,0 +1,80 @@
+/* Corps Capital — Strategic Wingman Platform · shared styles */
+:root{
+  --black:#0b0e13; --panel:#121723; --panel2:#171d2b;
+  --gold:#c79a3b; --gold-bright:#f0d49a; --gold-line:#8a6c2c;
+  --ink:#e9edf2; --soft:#9fb0c0; --muted:#6f7d8c;
+  --line:#2a3445; --green:#3a8f63; --red:#b9554f;
+  --maxw:1060px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--black); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  line-height:1.6;
+}
+a{color:var(--gold-bright); text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* top nav */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,14,19,.94); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:var(--maxw); margin:0 auto; padding:11px 22px;
+  display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+.nav .brand{font-weight:800; letter-spacing:.5px; color:#fff; font-size:15px; margin-right:auto;}
+.nav .brand span{color:var(--gold);}
+.nav a.item{color:var(--soft); font-size:13px; font-weight:600; text-decoration:none;
+  padding:5px 2px; border-bottom:2px solid transparent;}
+.nav a.item:hover{color:#fff; border-bottom-color:var(--gold);}
+.nav a.item.active{color:var(--gold-bright); border-bottom-color:var(--gold);}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:34px 22px 70px;}
+
+/* hero */
+.hero{text-align:center; padding:26px 0 8px;}
+.hero .kicker{color:var(--gold); letter-spacing:3px; font-size:12px; font-weight:700; text-transform:uppercase;}
+.hero h1{margin:8px 0 6px; font-size:30px; letter-spacing:.5px; color:#fff;}
+.hero .ethos{color:var(--gold-bright); font-weight:600; font-size:13px; letter-spacing:2px;}
+.hero .sub{color:var(--soft); font-size:15px; max-width:680px; margin:12px auto 0;}
+
+.illus{display:block; width:100%; max-width:760px; margin:26px auto 8px;
+  border-radius:14px; border:1px solid var(--gold-line); box-shadow:0 10px 40px rgba(0,0,0,.5);}
+.illus-cap{text-align:center; color:var(--muted); font-size:12px; margin-top:8px;}
+
+/* section + cards */
+h2{color:#fff; font-size:21px; margin:34px 0 6px; border-left:3px solid var(--gold); padding-left:12px;}
+h3{color:var(--gold-bright); font-size:16px; margin:22px 0 4px;}
+p{color:#d4dbe3;}
+.lead{font-size:16px; color:#dfe6ee;}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin:26px 0;}
+.card{display:block; background:linear-gradient(180deg,var(--panel),var(--panel2));
+  border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:13px;
+  padding:18px 18px 16px; color:var(--ink); text-decoration:none; transition:transform .12s, border-color .12s;}
+.card:hover{transform:translateY(-3px); border-color:var(--gold); text-decoration:none;}
+.card .ic{font-size:22px;}
+.card h4{margin:8px 0 4px; color:#fff; font-size:16px;}
+.card p{margin:0; color:var(--soft); font-size:13px;}
+.card.locked{border-top-color:var(--red); opacity:.92;}
+.card.locked h4 small{color:var(--red); font-weight:700; font-size:11px; letter-spacing:1px;}
+
+/* generic panel + table */
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:18px 0;}
+.callout{background:#15233a; border:1px solid #294063; border-left:3px solid var(--gold); border-radius:8px; padding:12px 16px; margin:16px 0; color:#dbe4ef; font-size:14px;}
+ul{padding-left:20px;} li{margin-bottom:5px; color:#d4dbe3;}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.5px;}
+th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
+th{color:var(--gold-bright); font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.5px;}
+td b{color:#fff;}
+.tag{display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px;}
+.tag.green{background:rgba(58,143,99,.18); color:#7fd6a6; border:1px solid #2f6b4f;}
+.tag.gold{background:rgba(199,154,59,.16); color:var(--gold-bright); border:1px solid var(--gold-line);}
+
+.quote{border-left:3px solid var(--gold); padding:4px 0 4px 16px; margin:18px 0; color:var(--gold-bright); font-style:italic; font-size:17px;}
+
+footer{max-width:var(--maxw); margin:0 auto; padding:24px 22px 50px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); text-align:center;}
+.backlink{display:inline-block; margin:24px 0 0; color:var(--soft); font-size:13px;}
+@media print{ .nav{display:none;} body{background:#fff; color:#111;} .card,.panel{box-shadow:none;} }
